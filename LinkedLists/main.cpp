@@ -3,7 +3,6 @@
 //  LinkedLists
 //
 //  Created by Guled on 2/23/16.
-//  Copyright © 2016 Somnibyte. All rights reserved.
 //
 
 #include <iostream>
