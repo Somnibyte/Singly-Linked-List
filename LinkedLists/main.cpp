@@ -20,6 +20,7 @@ int main(int argc, const char * argv[]) {
     list.addItemToBeginning(50);
     list.addItemAfter(list.getTop(), 900);
     list.deleteNode(list.getTop());
+    list.deleteNodeWithValue(50);
     list.printData();
 
 

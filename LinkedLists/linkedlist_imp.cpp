@@ -29,7 +29,7 @@ void LinkedList::addNewItem(int value){
 void LinkedList::printData(){
 
     while(top != NULL){
-        std::cout << top->data;
+        std::cout << top->data << std::endl;
         top = top->next;
     }
     
@@ -86,3 +86,41 @@ LinkedList::~LinkedList(){
         top = next_cell;
     }
 }
+
+
+void LinkedList::deleteNodeWithValue(int targetValue){
+ 
+    Node* nextNode = top->next;
+    Node* prevNode = top;
+    
+    while(top != NULL){
+        
+        if(top->data == targetValue){
+            Node* temp = top;
+            top = top->next;
+            free(temp);
+            break;
+        }else if (nextNode->data == targetValue){
+            
+            Node* temp = nextNode;
+            nextNode = nextNode->next;
+            prevNode->next = nextNode;
+            free(temp);
+            break;
+        }
+        
+        nextNode = nextNode->next;
+        prevNode = prevNode->next;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

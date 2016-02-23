@@ -18,6 +18,7 @@ public:
     void addItemAfter(Node* node, int value);
     Node* getTop(){return top;}
     void deleteNode(Node* after_me);
+    void deleteNodeWithValue(int value);
     
 private:
     Node* top;
