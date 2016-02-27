@@ -117,6 +117,56 @@ void LinkedList::deleteNodeWithValue(int targetValue){
 
 
 
+Node*::LinkedList::insertionSort(){
+    
+    // Create a new sentinel
+    Node* newSentinel = createNewNode(top->data, top);
+    newSentinel->next = NULL;
+    
+    // Node pointer to keep track of unsorted list
+    Node* nextItem = top->next;
+    
+    // Node pointer to keep track of sorted list
+    Node* after_me = newSentinel;
+    
+    while(nextItem != NULL){
+        
+        // Save a cell from the unsorted list to be used in the sorted list
+        Node* newCell = createNewNode(nextItem->data, NULL);
+        
+        // Move on to the next item in the unsorted list
+        nextItem = nextItem->next;
+        
+        // Make the unsorted sentinel start in the beginning
+        after_me = newSentinel;
+        
+        
+        // Check the case where the new item is the smaller than the first item in the sorted list
+        if(newCell->data < after_me->data){
+            // We can now use the sorted lists sentinel to put this item in the front
+            Node* oldCell = newSentinel;
+            newSentinel = newCell;
+            newSentinel->next = oldCell;
+        }else {
+            // Position the "after_me" Node pointer to the correct position in order to insert the new item
+            while(after_me != NULL && after_me->data < newCell->data){
+                after_me = after_me->next;
+            }
+            
+            // Add the new cell
+            after_me->next = newCell;
+        }
+       
+    }
+    
+    
+    
+    
+    
+    
+    
+    return newSentinel;
+}
 
 
 

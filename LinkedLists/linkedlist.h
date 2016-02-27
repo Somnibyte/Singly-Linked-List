@@ -17,12 +17,15 @@ public:
     void addItemToBeginning(int value);
     void addItemAfter(Node* node, int value);
     Node* getTop(){return top;}
+    void topSetter(Node* sentinel){top = sentinel;}
     void deleteNode(Node* after_me);
     void deleteNodeWithValue(int value);
+    Node* insertionSort();
     
 private:
     Node* top;
     Node* createNewNode(int value, Node* newNode);
+    
 };
 
 
