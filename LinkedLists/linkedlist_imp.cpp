@@ -116,7 +116,6 @@ void LinkedList::deleteNodeWithValue(int targetValue){
 
 
 
-
 Node*::LinkedList::insertionSort(){
     
     // Create a new sentinel
@@ -169,6 +168,42 @@ Node*::LinkedList::insertionSort(){
 }
 
 
+void LinkedList::selectionSort() {
+    
+    // Loop through each node
+    
+    Node* cursor = top;
+    
+    while(cursor != NULL){
+        
+        Node* min = cursor;
+        
+        Node* nextNode = cursor->next;
+        
+        while(nextNode != NULL){
+            
+            if(nextNode->data < min->data){
+                
+                min = nextNode;
+            }else{
+                nextNode = nextNode->next;
+
+            }
+            
+        }
+        
+        if(min != cursor){
+            //swap
+            int tempData = cursor->data;
+            cursor->data = min->data;
+            min->data = tempData;
+        }
+        
+        cursor = cursor->next;
+    }
+    
+    
+}
 
 
 

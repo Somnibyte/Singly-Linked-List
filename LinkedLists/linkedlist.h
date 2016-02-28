@@ -21,6 +21,7 @@ public:
     void deleteNode(Node* after_me);
     void deleteNodeWithValue(int value);
     Node* insertionSort();
+    void selectionSort();
     
 private:
     Node* top;

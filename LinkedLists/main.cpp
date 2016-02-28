@@ -16,16 +16,14 @@ int main(int argc, const char * argv[]) {
     LinkedList sortedList;
     
     list.addNewItem(3);
-    list.addNewItem(2);
     list.addNewItem(1);
-    sortedList.topSetter(list.insertionSort());
-    sortedList.printData();
-    list.addItemToBeginning(50);
-    list.addItemAfter(list.getTop(), 900);
-    list.deleteNode(list.getTop());
-    list.deleteNodeWithValue(50);
+    list.addNewItem(2);
+    list.selectionSort();
     list.printData();
+
     
+    //sortedList.topSetter(list.insertionSort());
+    //sortedList.printData();
 
 
     return 0;
